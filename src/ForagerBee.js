@@ -1,4 +1,5 @@
 var ForagerBee = function() {
+  HoneyMakerBee.call(this);
   this.age = 10;
   this.job = 'find pollen';
   this.canFly = true;
@@ -6,7 +7,7 @@ var ForagerBee = function() {
 };
 
 // Set the ForagerBee.prototype to look up to HoneyMakerBee
-ForagerBee.prototype = new HoneyMakerBee();
+ForagerBee.prototype = Object.create(HoneyMakerBee.prototype);
 
 ForagerBee.prototype.constructor = ForagerBee;
 
