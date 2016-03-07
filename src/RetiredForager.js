@@ -1,4 +1,5 @@
 var RetiredForagerBee = function() {
+  ForagerBee.call(this);
   this.age = 40;
   this.job = 'gamble';
   this.canFly = false;
@@ -6,10 +7,9 @@ var RetiredForagerBee = function() {
 };
 
 // create the subclass relationship
-RetiredForagerBee.prototype = new ForagerBee();
+RetiredForagerBee.prototype = Object.create(ForagerBee.prototype);
 
 RetiredForagerBee.prototype.constructor = RetiredForagerBee;
-
 
 RetiredForagerBee.prototype.forage = function(){
   var str = "I am too old, let me play cards instead";
